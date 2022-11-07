@@ -1,0 +1,36 @@
+def menu():
+        print("\nBenvenuto scegli cosa fare: \n1)Perimetro  quadrato \n2)Circonferenza cerhio \n3)Perimetro rettangolo \n4)Per uscire \n ") # funzione per il menu e solo grafico 
+
+def Quadrato():
+        lq = float(input ("\ninsersci il lato del quadrato:\n")) # lq e una variabile per il lato del quadrato la chiediamo all'utente che la inserira'
+        pq = lq * 4 # qui calcoliamo il perimetro del quadrato e lo inerisamo nella variabile pq
+        print("\nQuesto e' il perimetro del tuo quadrato: \n",pq) # con questa print mostriamo a schermo il risultato
+
+def Cerchio():
+        r = float(input ("\ninserisci il raggio del cerchio:\n")) #r e una variabile per il raggio del cerchio la facciamo inserire al utente
+        circon = 2 * 3.14 * r # qui calcoliamo la circonferenza del cerchio e la inseriamo in circon
+        print("\nQuesto e' la circonferenza del tuo cerchio:\n",circon) # con quesra print mostriamo a schermo il risultato
+
+def Rettangolo():
+        br = float(input ("\ninserisci la base del rettangolo:\n")) #br e una variabile per la base del rettangolo che facciamo inserire al utente
+        ar = float(input ("\ninserisci l'altezza del rettangolo:\n")) #ar e una variabile per l'altezza del rettangolo
+        perimetro = br * 2 + ar * 2 #qui calcoliamo il perimetro del rettangolo che sara inserito in perimetro
+        print("\nQuesto e' il perimetro del tuo rettangolo:\n",perimetro) # con questa print mostriamo a schermo il risultato
+
+i = 0 # variabile che sara la condizione del while
+while i==0: # questo while permette al utente di ripetere la scelta  una volta svolta una operazione
+        menu() # richiamiamo la funzione menu per mostrarlo a schermo
+        x = ( input()) #variabile per la scelta del operazione da fare
+
+        if x=='1': # la condizione del if messa in questo modo permettera in caso di digitazione di un carattere errato di entrare nel eslse
+                Quadrato() #nel caso l'utente perme 1 richiama la funzione Quadrato, questo vale rispettivamente per 2 e 3.
+        elif x=='2':
+                Cerchio()
+        elif x=='3':
+                Rettangolo() 
+        elif x=='4': #questo caso e'stato creato nel caso in qui l'utente non voglia svolgere piu' operazioni
+                print("\nArrivederci!!!")
+                quit() #questo comando terminera il programma
+        else :
+                print("\nATTENZIONE,VALORE ERRATO!!!\n") #questo messaggio viene visualizzato in caso digitazione errato del carrattere
+
